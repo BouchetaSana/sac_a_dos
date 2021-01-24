@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+     <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>Sac-a-dos</title>
+          <link rel="icon" type="image/png" href="/assets/images/image.png">
+
+          <title>Sac a dos</title>
+          <link rel="stylesheet" href="css/bootstrap-5.0.0-beta1/dist/css/bootstrap.min.css" type="text/css" />
+          <link rel="stylesheet" href="css/style.css" type="text/css" />
+          <script src="https://code.jquery.com/jquery-3.5.1.js"
+               integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+     </head>
+
+     <body>
+
+          <nav id="menu" class="navbar navbar-default navbar-fixed-top">
+               <div class="container">
+                    <div class="navbar-header">
+                         <a class="navbar-brand page-scroll" href="#page-top">
+                              Probleme de SAC A DOU
+                         </a>
+                    </div>
+               </div>
+          </nav>
+
+          <div id="about">
+               <div class="container">
+                    <div class="row">
+                         <div class="col-xs-12 col-md-6"> <img src="assets/images/image.png" class="img-responsive"
+                                   alt="sac-a-dos" /> </div>
+                         <div class="col-xs-12 col-md-6">
+                              <div class="about-text">
+                                   <h2>Problématique </h2>
+                                   <p>Etant donné plusieurs objets possédant chacun un poids et une valeur et étant
+                                        donné un poids maximum pour le sac <b>"W"</b>, <br />Quels objets
+                                        faut-il mettre dans le sac de manière à maximiser la valeur totale
+                                        <b>"V<small>t</small>"</b> sans dépasser le poids
+                                        maximal autorisé pour le sac <b>"P<small>t</small>"</b> ?
+                                   </p>
+                                   <h3>Formule de probleme</h3>
+                                   <div class=" col-xs-12">
+                                        <img src="assets/images/formule.png" class="img-responsive" alt="" />
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                         <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                              <button type="button" class="btn btn-outline-primary"><a
+                                        href="#exemple">Solution</a></button>
+                         </div>
+                    </div>
+               </div>
+          </div>
+
+
+
+          <div id="exemple">
+               <div class="container">
+                    <div class="section-title text-center">
+                         <h2>Exemple d'application</h2>
+                    </div>
+                    <div class=" row">
+                         <div class="exemple-poid-max ">
+                              <div class="col-md-3">
+                                   <p>Le poid max (W):</p>
+                                   <input type="number" class="form-control" placeholder="Poid max" id="w_total"
+                                        required>
+                              </div>
+                         </div>
+
+                         <div class=" col-md-10  align-items-center">
+                              <table class="table table-hover  table-bordered table-striped" id="table">
+                                   <thead>
+                                        <tr>
+                                             <th scope="col">Objet</th>
+                                             <th scope="col">Valeur(v)</th>
+                                             <th scope="col">Poid(w)</th>
+                                             <th scope="col">Action</th>
+                                        </tr>
+                                   </thead>
+                                   <tbody id="tbody">
+
+                                   </tbody>
+                              </table>
+                         </div>
+
+                         <div class="row">
+                              <div class="col-3">
+                                   <button type="button" class="btn btn-outline-success" id="btn_add">Ajouter
+                                        objet</button>
+                              </div>
+                              <div class="col-3">
+                                   <div id="add_value">
+                                        <input type="number" class="form-control" placeholder=" value" id="value"
+                                             required>
+                                   </div>
+                              </div>
+                              <div class="col-3">
+                                   <div id="add_poid">
+                                        <input type="number" class="form-control" placeholder="poid" id="poid" required>
+                                   </div>
+                              </div>
+                              <div class="col-3">
+                                   <button type="button" class="btn btn-success" id="btn_add_object">Add</button>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="row">
+                         <div class="col-md-4 ms-auto" id="btn_submit">
+                              <button type="button" class="btn btn-primary">Résoudre</button>
+                         </div>
+                    </div>
+               </div>
+          </div>
+
+
+          <script src="js/index.js"></script>
+          <script src="js/algorithme.js"></script>
+
+     </body>
+
+</html>
