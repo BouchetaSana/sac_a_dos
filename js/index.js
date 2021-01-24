@@ -12,18 +12,19 @@ $(document).ready(function (e) {
      $("#btn_add_object").click((e) => {
           const value = $('#value').val() || 0
           const poid = $('#poid').val() || 0
-          id++;
-          var row = "<th scope='row'  id='adr'" + id + ">" + id + " </th><td>" + value + "</td><td>" + poid + "</td>";
+          var row = "<th scope='row'  id='adr" + id + "'>" + id + " </th><td>" + value + "</td><td>" + poid + "</td>";
           $("#tbody").append("<tr>" + row + "</tr>")
+          id++;
      })
 
 
+     var N;
 
      var submit = $('#btn_submit');
      submit.click(function (e) {
           var W = parseInt($("#w_total").val());
           var table = $("#tbody");
-          var N = $("#tbody tr").length;
+          N = $("#tbody tr").length;
           var v = [], w = [];
 
           table.find('tr').each(function (i, el) {
@@ -39,22 +40,21 @@ $(document).ready(function (e) {
 
           console.log('v=' + v);
           console.log('w=' + w);
-          console.log("w="+W);
-          console.log("N="+N);
+          console.log("w=" + W);
+          console.log("N=" + N);
 
           var selectedOject = Solution(W, N, w, v);
 
           console.log('selectedOject=' + selectedOject);
-     });
 
-
-     for (var i = 0; i < N; i++) {
-          if (selectedOject.indexOf(i) == (-1)) {
-               $('#adr' + i).css("background-color", "#d9534f").css("color", "white");
-          } else {
-               $('#adr' + i).css("background-color", "#5cb85c").css("color", "white");
+          for (var i = 0; i < N; i++) {
+               console.log(selectedOject.indexOf(i))
+               if (selectedOject.indexOf(i) == (-1)) {
+                    $('#adr' + i).parent().css("background-color", "#d9534f");
+               } else {
+                    $('#adr' + i).parent().css("background-color", "#5cb85c");
+               }
           }
-     }
-
+     });
 
 })

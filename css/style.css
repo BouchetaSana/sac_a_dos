@@ -94,6 +94,9 @@ p {
      margin-bottom:2rem ;
 }
 
+#tbody tr th{
+	background-color: "#d9534f";
+}
 
 
 @media (max-width: 768px) {

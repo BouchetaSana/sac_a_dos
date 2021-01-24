@@ -1,4 +1,5 @@
 
+
 function max(a, b) {
     if (a > b) return a;
     return b;
@@ -8,7 +9,7 @@ function Solution(W, N, w, v) {
 
     var mat = [];
 
-// js array two dimension building
+    // js array two dimension building
     for (var j = 0; j <= W; j++) {
         mat[j] = [];
     }
@@ -18,7 +19,7 @@ function Solution(W, N, w, v) {
         mat[i][0] = 0;
     }
 
-//this an optimization ???!! we deleting a not-needed row
+    //this an optimization ???!! we deleting a not-needed row
     for (var j = 1; j <= W; j++) {
         if (w[0] > j) {
             mat[0][j] = 0;
@@ -38,8 +39,8 @@ function Solution(W, N, w, v) {
         }
     }
 
-//printing results
-//matrix
+    //printing results
+    //matrix
     for (var i = 0; i < N; i++) {
         for (var j = 0; j <= W; j++) {
             console.log(mat[i][j]);
@@ -47,11 +48,11 @@ function Solution(W, N, w, v) {
         console.log("\n");
     }
 
-//    //the optimal gain
+    //    //the optimal gain
     console.log("\n\nthe optimal gain " + mat[N - 1][W] + " \n\n");
 
-//list of the selected objects
-    var selectedOject=[];
+    //list of the selected objects
+    var selectedOject = [];
     var j = W;
     for (var i = N - 1; i > 0; i--) {
         if ((mat[i][j] == 0)) {
@@ -64,7 +65,7 @@ function Solution(W, N, w, v) {
             j = j - w[i];
         }
     }
-    if ((mat[0][j] != 0)){
+    if ((mat[0][j] != 0)) {
         selectedOject.push(0);
         console.log("object num 0 has been selected \n");
     }
