@@ -1,4 +1,5 @@
 var id;
+var gain;
 $(document).ready(function (e) {
      //affiche le formulaire
      $("#btn_add").on("click", (e) => {
@@ -62,7 +63,12 @@ submit.click(function (e) {
      console.log("w=" + W);
      console.log("N=" + N);
 
-     var selectedOject = Solution(W, N, w, v);
+     var [selectedOject, gain] = Solution(W, N, w, v);
+
+     //display gain 
+     var p = $("#gain p")
+     p.append(gain);
+     p.show();
 
      console.log('selectedOject=' + selectedOject);
 

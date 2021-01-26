@@ -47,8 +47,7 @@ function Solution(W, N, w, v) {
         }
         console.log("\n");
     }
-
-    //    //the optimal gain
+    var gain = mat[N - 1][W];
     console.log("\n\nthe optimal gain " + mat[N - 1][W] + " \n\n");
 
     //list of the selected objects
@@ -70,6 +69,6 @@ function Solution(W, N, w, v) {
         console.log("object num 0 has been selected \n");
     }
 
-    return selectedOject;
+    return [selectedOject,gain];
 }
 
